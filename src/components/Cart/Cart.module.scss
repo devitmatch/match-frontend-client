@@ -1,0 +1,513 @@
+@import '../../libs/variables.scss';
+
+.container {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: $very-light-blue;
+  left: 0;
+  top: 0;
+  overflow: scroll;
+
+  .selectClientWarning {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .header {
+    background-color: $very-light-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 70px;
+    height: 50px;
+
+    path {
+      fill: $slate;
+    }
+
+    .close {
+      background: none;
+      border: none;
+    }
+
+    .logo {
+      width: 125px;
+    }
+  }
+
+  .deleteProducts {
+    border: none;
+    background: none;
+    margin:0 12px -5px 0;
+  }
+
+  hr {
+    background-color: $blue-gray;
+    opacity: 0.8;
+    width: 100%;
+    height: 1px;
+  }
+
+  .clientFilter {
+    width: 100%;
+    padding: 50px 200px 0 200px;
+    background-color: $very-light-blue;
+
+    p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .clientSelectorContainer {
+      width: 100%;
+      max-width: 300px;
+      position: relative;
+    }
+  }
+
+  .productionSelectorContainer {
+    position: relative;
+  }
+
+  .fabricSelectorContainer {
+    position: relative;
+  }
+
+  .draftText {
+    padding: 20px 200px;
+    background-color: $blue-gray;
+    font-weight: bold;
+    color: $white;
+
+
+    span {
+      color: $coral-pink;
+    }
+  }
+
+  .deleteContainer {
+    padding: 20px 200px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $very-light-blue;
+    background-color: $white;
+
+    input {
+      width: 5px;
+    }
+
+    span {
+      margin-top: -3px;
+    }
+
+    .separator {
+      height: 25px;
+      width: 1px;
+      background-color: $light-periwinkle;
+      margin: 0 10px 0 -5px;
+    }
+
+    path {
+      fill: $slate;
+    }
+  }
+
+  .productModifiers {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    flex: 1;
+
+
+    .production,
+    .meters,
+    .exclusivity {
+      height: 52px;
+      margin-right: 20px;
+    }
+
+    &>div {
+      margin-right: 20px;
+    }
+
+    .exclusivity {
+      background-color: $blue-gray;
+      border: none;
+      color: $white;
+      border-radius: 3px;
+      padding: 0 20px;
+    }
+
+    .metersInputContainer {
+      input {
+        max-width: 120px;
+        min-width: 70px;
+        border-radius: 8px;
+        border: 1px solid $light-periwinkle;
+        margin-right: 5px;
+        padding: 5px 10px;
+      }
+
+      span {
+        font-weight: bold;
+        text-transform: lowercase;
+      }
+    }
+
+    .checks {
+      margin-left: 30px;
+      margin-top: 5px;
+      height: 45px;
+    }
+  }
+
+  .section {
+    padding: 50px 200px 20px 200px;
+    font-weight: bold;
+    box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+  }
+
+  .products {
+    width: 100%;
+    background-color: $white;
+
+    .productsList {
+      list-style: none;
+
+      .product {
+        display: flex;
+        padding: 10px 200px;
+        border-bottom: 1px solid $very-light-blue;
+
+        .imageContainer {
+          width: 187px;
+          height: 187px;
+          overflow: hidden;
+          background-color: $blue-gray;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          span {
+            color: $white;
+          }
+        }
+
+        .info {
+          margin: 20px 0 20px 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .code {
+            color: $slate;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+
+        .productCheck {
+          display: flex;
+          align-items: center;
+          margin-top: -5px;
+        }
+
+        .defineFabric,
+        .defineExclusivity {
+          border: none;
+          background: none;
+          color: $turquoise-blue;
+        }
+      }
+
+      .metersArea {
+        display: inline-block;
+        margin-left: 10px;
+        .singleMetersInput {
+          margin-top: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          input {
+            width: 100px;
+          }
+
+          span {
+            margin-left: 10px;
+          }
+        }
+
+        button {
+          border: none;
+          background: none;
+          color: $turquoise-blue;
+        }
+      }
+    }
+  }
+
+  .actionsContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 200px;
+    background-color: $white;
+
+
+    button {
+      margin-left: 10px;
+      padding: 15px 50px;
+    }
+  }
+
+  .saveAsDraft {
+    border: $turquoise-blue;
+    border: 2px solid $turquoise-blue;
+    background: none;
+    color: $turquoise-blue;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  .selectPrintsWarning {
+    padding: 0px 200px 24px 200px;
+    text-align: right;
+    color: black;
+    background-color: $white;
+  }
+
+  .exclusivityModal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+
+    &>div {
+      background-color: $very-light-blue;
+      padding: 20px 30px;
+      max-height: 80vh;
+      overflow-y: scroll;
+      border-radius: 6px;
+    }
+  }
+
+  .fabricsModalContainer {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 72px;
+    align-items: center;
+    z-index: 2;
+
+    .modal {
+      background-color: $ice-blue;
+      padding: 72px;
+      width: 100%;
+      height: calc(100vh - 72px);
+      position: relative;
+      border-radius: 5px;
+      overflow-y: scroll;
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 18px;
+      }
+
+      .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: none;
+        background: none;
+        z-index: 3;
+
+        path {
+          fill: $dark;
+        }
+      }
+
+      input {
+        height: 51px;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        padding: 5px 10px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        height: fit-content;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: calc(100% + 30px);
+        margin-left: -16px;
+      }
+
+      li {
+        overflow: hidden;
+        width: responsive(200, 300);
+        height: responsive(250, 350);
+        display: block;
+        background-color: $white;
+        margin: 15px;
+        border-radius: 4px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+
+        @media (max-width: 1025px) {
+          width: 350px;
+        }
+
+        @media (max-width: 800px) {
+          width: 220px;
+        }
+
+        button {
+          border: none;
+          width: 100%;
+
+          &:hover {
+            .fabricInfoContainer {
+              max-height: 100%;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .fabricInfoContainer {
+          text-transform: capitalize;
+          text-align: left;
+          color: $slate;
+          overflow: hidden;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          max-height: 50px;
+          background-color: $white;
+          transition: max-height 0.6s ease-in-out;
+        }
+
+        .fabricName {
+          margin: 15px;
+          z-index: 5;
+          font-size: 16px;
+        }
+
+        .fabricInfo {
+          margin: 5px 25px 20px;
+
+          .item {
+            margin: 0 0 responsive(3, 5);
+            font-size: responsive(12, 14);
+          }
+
+          span {
+            font-size: responsive(12, 14);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .clientOrders {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 50px 200px 50px 200px;
+    background-color: $very-light-blue;
+
+    li {
+      width: 100%;
+      padding: 10px;
+      background-color: $white;
+      margin: 10px 0;
+      padding: 10px 40px;
+      border-radius: 5px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+
+      &.hide {
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: none;
+        text-align: left;
+        font-weight: bold;
+        color: $slate;
+
+        &.draft {
+          color: $coral-pink;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .loadingContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  .purchaseSuccess {
+    border: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: $very-light-blue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 48px;
+      width: fit-content;
+    }
+
+    p {
+      margin-top: 50px;
+      font-size: 18px;
+      max-width: 400px;
+      width: fit-content;
+    }
+  }
+}

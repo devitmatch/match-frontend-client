@@ -1,0 +1,164 @@
+@import '../../libs/variables.scss';
+
+.briefings{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  flex-grow: 1;
+  @include hide-scrollbar;
+
+  .header {
+    width: 100%;
+    background-color: $dark;
+    padding: 0px 70px 20px 70px;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 15;
+
+    .sectionTitle {
+      color: $white;
+      font-size: 16px;
+
+      .title {
+        margin-right: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+  .actions{
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    .filters{
+      display: flex;
+      .clearFilters {
+        border: none;
+        color: $dark;
+        cursor: pointer;
+        display: inline-block;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin: 0 10px;
+        padding: 0;
+        user-select: none;
+        vertical-align: middle;
+        background: none;
+        
+      }
+    }
+    .searchInputContainer {
+      height: 46px;
+      min-width: 350px;
+      border: 1px solid $light-periwinkle;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      padding: 10px 15px;
+      position: relative;
+  
+      svg {
+        margin-right: 5px;
+      }
+  
+      input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background: none;
+  
+        &:placeholder {
+          color: $light-gray;
+        }
+      }
+    }
+    .createBriefing{
+      border-radius: 30px;
+      max-width: 200px;
+    }
+  }
+  .briefingsGrid{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 70px;
+    justify-content: space-between;
+    .briefingCard{
+      position: relative;
+      width: 24%;
+      padding-top: 38%;
+      background-color: $white;
+      margin-top: 1.5%;
+      border-radius: 10px;
+      background-color: $grayish-blue;
+      overflow: hidden;
+      border: none;
+      box-shadow: none;
+      transition: transform 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:hover {
+        transform: scale(1.01);
+      }
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .info{
+        position: absolute;
+        width: 100%;
+        height: 40%;
+        top: 55%;
+        background-color: $white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15% 10px 7% 10px;
+        font-weight: bold;
+        .new{
+          display: block;
+          background-color: $turquoise-blue;
+          color: $white;
+          padding: 3px 8px;
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 4px;
+          font-weight: normal;
+          font-size: 14px;
+          display: flex;
+        }
+        .label{
+          font-style: italic;
+          color: $slate;
+          font-size: 14px;
+        }
+        .title{
+          font-size: 20px;
+          margin-bottom: 15%;
+          height: 24px;
+        }
+        .client{
+          font-size: 14px;
+          color: $slate;
+        }
+      }
+    }
+  }
+  .dateFilter{
+    margin-left: 10px;
+  }
+  .loadingContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+  }
+}

@@ -1,0 +1,168 @@
+@import '../../libs/variables.scss';
+
+.forgotPassword {
+  .loginContent {
+    .formContainer {
+      .formTitle {
+        max-width: 152px;
+      }
+
+      .submitFeedback {
+        margin-top: 14px;
+        padding-left: 2px;
+      }
+    }
+  }
+}
+
+.login,
+.forgotPassword {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+
+  .loginHeader {
+    left: 0;
+    padding: 64px 52px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .headerLogo {
+      display: block;
+      height: 36px;
+      width: auto;
+    }
+  }
+
+  .loginContent {
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    padding: 164px 52px;
+    width: 100%;
+
+    .formContainer {
+      display: block;
+      margin: 0 auto;
+      max-width: 528px;
+      width: 100%;
+
+      @media (min-width: 1000px) {
+        margin: 0 50vw 0 0;
+        max-width: 50vw;
+      }
+
+      .formTitle {
+        color: $dark;
+        font-family: Lato;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: 88px;
+      }
+
+      .formElement {
+        label {
+          color: $slate;
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.3;
+          margin-bottom: 6px;
+          padding-left: 2px;
+        }
+
+        input[type=email],
+        input[type=password] {
+          background-color: $white;
+          border-radius: 6px;
+          border: 1px solid $light-periwinkle;
+          color: $dark;
+          display: block;
+          font-size: 16px;
+          line-height: 1.3;
+          padding: 20px 18px;
+          width: 100%;
+        }
+
+        .passwordRow,
+        .emailRow {
+          margin-bottom: 24px;
+          position: relative;
+        }
+
+        .passwordRow {
+          .forgotPasswordLink {
+            color: $secondary-light-blue;
+            display: block;
+            font-size: 14px;
+            letter-spacing: 0.45px;
+            line-height: 1.4;
+            position: absolute;
+            right: 0;
+            text-decoration: none;
+            top: 0;
+            width: fit-content;
+          }
+        }
+
+        .submitRow {
+          position: relative;
+
+          button[type=submit] {
+            background-color: $turquoise-blue;
+            border-radius: 26px;
+            border: none;
+            color: $white;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 1.3;
+            min-width: 138px;
+            padding: 16px;
+            text-align: center;
+          }
+        }
+      }
+
+      .error {
+        bottom: -18px;
+        color: $coral-pink;
+        font-size: 12px;
+        font-weight: bold;
+        left: 2px;
+        position: absolute;
+      }
+    }
+
+    .imageContainer {
+      display: none;
+
+      @media (min-width: 1000px) {
+        background-color: $grayish-blue;
+        display: block;
+        flex-basis: 50%;
+        height: 100%;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50vw;
+      }
+
+      .loginScreenImage {
+        border-bottom-left-radius: 1vw;
+        border-top-left-radius: 1vw;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
+        display: block;
+        height: auto;
+        max-width: 1120px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 43vw;
+      }
+    }
+  }
+}

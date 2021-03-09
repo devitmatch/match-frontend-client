@@ -1,0 +1,156 @@
+//Colors
+$black: #000;
+$dark: #202730;
+$slate: #4b5768;
+$dark-gray: #707d8e;
+$light-gray: #a3b3c7;
+$white: #fff;
+$light-periwinkle: #d4dde8;
+$ice-blue: #edf0f2;
+$very-light-blue: #e9ecef;
+$light-blue: #3ad0d1;
+$blue: #1fc0c1;
+$secondary-light-blue: #28b7b8;
+$turquoise-blue: #00c4c5;
+$turquoise-blue-hover: #00ABAC;
+$blue-gray: #808d9e;
+$coral-pink: #ff5d68;
+$light-red: #ff634c;
+$grayish-blue: #c8cfd8;
+
+@function responsive($value1, $value2, $width1: 360, $width2: 1280) {
+  $x1: $width1;
+  $x2: $width2;
+  $y1: $value1;
+  $y2: $value2;
+  $a: ($y2 - $y1) / ($x2 - $x1);
+  $b: ($x2 * $y1 - $x1 * $y2) / ($x2 - $x1);
+  @return calc(#{$a * 100vw} + #{$b * 1px});
+}
+
+//input style
+.defaultTextInput,
+.defaultSelectInput {
+  width: 100%;
+  font-size: responsive(14, 16);
+  font-family: 'Lato-Regular', sans-serif;
+  color: $slate;
+  border: 1px solid $light-periwinkle;
+  background-color: $white;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: left;
+  min-width: 187px;
+
+  &.error {
+    border: 1px solid $coral-pink;
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $slate;
+    opacity: 1;
+    /* Firefox */
+  }
+
+}
+
+.defaultSelectInput {
+  position: relative;
+  padding: 15px 40px 15px 15px;
+  min-height: 50px;
+
+
+  &:after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-left: 1px solid $blue-gray;
+    border-bottom: 1px solid $blue-gray;
+    right: 20px;
+    top: 45%;
+    transform: rotate(-45deg) translateY(-50%);
+    position: absolute;
+  }
+}
+
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+@mixin show-scrollbar {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $light-gray;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $dark;
+    outline: none;
+  }
+}
+
+.defaultActionButton {
+  color: $white;
+  text-decoration: none;
+  padding: 9px 35px;
+  background-color: $turquoise-blue;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  height: 52px;
+  width: 100%;
+  max-width: 246px;
+
+  &:disabled {
+    background-color: $blue-gray;
+  }
+}
+.defaultRoundedActionButton{
+  @extend .defaultActionButton;
+  border-radius: 30px;
+  height: auto;
+  width: auto;
+  padding: 15px 30px;
+}
+
+.defaultDeleteButton {
+  color: $white;
+  text-decoration: none;
+  padding: 9px 35px;
+  background-color: $coral-pink;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  height: 52px;
+  width: 100%;
+  max-width: 246px;
+}
+
+.defaultRoundedDeleteButton{
+  @extend .defaultDeleteButton;
+  border-radius: 30px;
+  height: auto;
+  width: auto;
+  padding: 15px 30px;
+}

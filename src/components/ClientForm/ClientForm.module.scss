@@ -1,0 +1,235 @@
+@import '../../libs/variables.scss';
+
+.clientFormModal {
+  background-color: $very-light-blue;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 15;
+
+  header {
+    align-items: center;
+    background-color: $dark;
+    display: flex;
+    padding: 20px 70px;
+
+    .closeButton{
+      background: none;
+      border: none;
+      color: $white;
+      text-decoration: none;
+    }
+    .backIcon{
+      display: inline-block;
+      transform: rotate(180deg);
+      margin-right: 10px;
+    }
+  }
+
+  .clientForm {
+    background-color: $white;
+    border-radius: 6px;
+    margin: 30px 70px;
+    padding: 25px 40px;
+
+    hr {
+      border: none;
+      border-top: 2px solid $very-light-blue;
+    }
+
+    .formHeaderSeparator {
+      margin: 25px 0 25px -40px;
+      width: calc(100% + 80px);
+    }
+
+    .clientFormHead {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      .clientName,
+      .clientLocal {
+        color: $slate;
+        font-weight: bold;
+      }
+
+      .clientLocal {
+        .switchClienteType {
+          background: none;
+          border: none;
+          color: $turquoise-blue;
+          text-decoration: underline;
+        }
+        .switchSeparator{
+          margin: 0 15px;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      label {
+        color: $slate;
+        display: block;
+        font-weight: 600;
+        margin-top: 25px;
+        position: relative;
+
+        & > div {
+          margin-top: 15px;
+        }
+
+        div ~ div {
+          margin-top: 20px;
+        }
+
+        input,
+        textarea {
+          background-color: $white;
+          border: 1px solid $light-periwinkle;
+          border-radius: 6px;
+          color: $slate;
+          display: block;
+          font-family: 'Lato-Regular', sans-serif;
+          font-size: responsive(14, 16);
+          margin-bottom: 15px;
+          margin-top: 15px;
+          padding: 10px;
+          resize: none;
+          text-align: left;
+          width: 100%;
+
+          &:disabled{
+            background-color: $ice-blue;
+          }
+        }
+
+        textarea {
+          height: 100px;
+        }
+      }
+
+      .addRegister {
+        align-items: center;
+        background: none;
+        border: none;
+        display: flex;
+        font-size: 14px;
+        font-weight: bold;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+
+      .deleteContainer {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        .delete {
+          background: none;
+          border: none;
+          color: $coral-pink;
+          display: block;
+          font-weight: bold;
+        }
+      }
+
+      .profileImageContainer {
+        display: flex;
+        margin-top: 20px;
+
+        .imageContainer {
+          position: relative;
+
+          .imagePlaceholder {
+            align-items: center;
+            border: 1px solid $very-light-blue;
+            border-radius: 50%;
+            display: flex;
+            height: 80px;
+            justify-content: center;
+            margin: 0;
+            margin-right: 20px;
+            min-height: 80px;
+            min-width: 80px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 80px;
+
+            span {
+              font-size: 30px;
+            }
+
+            img {
+              height: 100%;
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+        }
+
+        input {
+          border-radius: 50%;
+          height: 80px;
+          margin: 0;
+          margin-right: 20px;
+          min-height: 80px;
+          min-width: 80px;
+          opacity: 0;
+          padding: 0;
+          width: 80px;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        .imageInputInstructions {
+          font-weight: normal;
+        }
+
+        .deleteImage {
+          background: none;
+          border: none;
+          color: $coral-pink;
+          display: block;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    section {
+      min-width: 250px;
+      width: 30%;
+
+      hr {
+        margin: 40px 0;
+      }
+    }
+    .actionsContainer{
+      display: flex;
+      justify-content: flex-end;
+      .sendInvite{
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        text-decoration: underline;
+        svg{
+          margin-left: 40px;
+  
+        }
+      }
+    }
+   
+  }
+}

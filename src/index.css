@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  -ms-overflow-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e9ecef;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-flow: column;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Lato-Regular.woff') format('woff'),
+    url('./assets/fonts/Lato-Regular.ttf') format('truetype'),
+    url('./assets/fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Lato-Bold.woff') format('woff'),
+    url('./assets/fonts/Lato-Bold.ttf') format('truetype'),
+    url('./assets/fonts/Lato-Bold.svg#Lato-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Lato-Light.woff') format('woff'),
+    url('./assets/fonts/Lato-Light.ttf') format('truetype'),
+    url('./assets/fonts/Lato-Light.svg#Lato-Light') format('svg');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+body {
+  color: #202730;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.09);
+  outline: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.chrome-picker {
+  width: 100% !important;
+  box-shadow: none !important;
+}

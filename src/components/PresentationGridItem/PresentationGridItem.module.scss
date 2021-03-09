@@ -1,0 +1,187 @@
+@import '../../libs/variables.scss';
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 329px;
+  transition: transform 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &.small{
+    max-width: 22%;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+  .attendanceSelector {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 100px);
+    display: none;
+    z-index: 1;
+    .selectorPosition {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border-radius: 6px;
+    
+      .steps {
+        position: relative;
+        border: 1px solid $light-periwinkle;
+        border-bottom: none;
+        padding: 22px 13px 0;
+        background-color: white;
+        width: 100%;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        // min-height: 52px;
+        display: flex;
+        align-items: center;
+    
+        .separator {
+          margin: 0 10px;
+          color: $blue-gray;
+        }
+    
+        button {
+          border: none;
+          font-size: 11px;
+          color: $blue-gray;
+          text-transform: uppercase;
+          font-family: 'Lato', sans-serif;
+    
+          &.active {
+            color: $turquoise-blue;
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        }
+      }
+    
+      .list {
+        position: relative;
+        width: 100%;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+  }
+
+  &:hover {
+    .attendanceSelector {
+      display: block;
+    }
+  }
+
+  .check {
+    position: absolute;
+    top: 2px;
+    left: 13px;
+    z-index: 1;
+  }
+  .editPresentation {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    display: none;
+  }
+  &:hover {
+    .editPresentation {
+      display: flex;
+    }
+  }
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.presentationGridItem {
+  display: block;
+  width: 100%;
+  margin-bottom: 3vw;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 6px;
+  background-color: white;
+
+  .imagesGrid {
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    background-color: $dark-gray;
+    position: relative;
+
+    img {
+      top:0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    &:before {
+      content: 'Suba uma estampa :)';
+      position: absolute;
+      font-size: 18px;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+  }
+
+  .info {
+    padding: 20px 20px 4px;
+    background-color: white;
+    &.mini{
+      padding: 10px 10px 4px;
+    }
+  }
+
+  .name {
+    font-size: 16px;
+    word-wrap: break-word;
+    color: $slate;
+    font-weight: bold;
+    margin-bottom: 6px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid $light-periwinkle;
+    &.mini{
+      font-size: 9px;
+      padding-bottom: 6px;
+    }
+  }
+
+  .tags {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .tag {
+      padding: 3px 9px;
+      background-color: $dark-gray;
+      color: white;
+      border-radius: 4px;
+      width: fit-content;
+      font-weight: 600;
+      font-size: 11px;
+      &.mini{
+        font-size: 9px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,224 @@
+@import '../../libs/variables.scss';
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.inverse {
+    flex-direction: row-reverse;
+  }
+
+  .name {
+    font-weight: bold;
+    color: $blue;
+    font-size: 16px;
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+
+    time {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.message {
+  background-color: white;
+  padding: 28px 30px;
+  border-radius: 6px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  position: relative;
+  margin: 20px 0 30px 0;
+  color: $slate;
+
+
+  &:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    left: 15px;
+    box-sizing: border-box;
+    top: -20px;
+  }
+
+  &.inverse {
+    &:before {
+      left: unset;
+      right: 15px;
+    }
+  }
+}
+
+.minifiedContainer {
+  background-color: $white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .header {
+    padding: 12px 0;
+    margin-left: -5px;
+    margin-top: -4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 14px;
+    }
+
+    .messageButton {
+      border: none;
+      background: none;
+      position: relative;
+
+      .messageIndicator {
+        position: absolute;
+        background-color: $coral-pink;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        color: white;
+        right: -8px;
+        top: 0px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Lato';
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: darken 0.3s ease-in-out forwards;
+  z-index: 16;
+
+  .chatContainer {
+    position: absolute;
+    width: 100%;
+    max-width: 462px;
+    height: 100vh;
+    background-color: $very-light-blue;
+    padding: 32px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    animation: fromLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .closeButton {
+      border: none;
+      position: absolute;
+      right: 24px;
+      top: 14px;
+      background: none;
+    }
+
+    .inputContainer {
+      width: 100%;
+      height: 150px;
+      border-radius: 5px;
+      background-color: white;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 7px;
+
+      textarea {
+        border: none;
+        background: none;
+        padding: 10px;
+        align-items: top;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        color: $blue-gray;
+        resize: none;
+      }
+
+      button {
+        border: none;
+        background-color: $turquoise-blue;
+        color: white;
+        font-size: 16px;
+        padding: 0 19px;
+        border-radius: 3px;
+        height: 40px;
+      }
+
+      &.disabled {
+        background-color: lightgray;
+
+        button {
+          background-color: gray;
+        }
+      }
+    }
+  }
+
+  .dialog {
+    overflow: scroll;
+
+    .message {
+      box-shadow: none;
+    }
+    .deleteContainer{
+      width: 100%;
+      margin-top: -20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content:flex-end;
+      button{
+        color: $white;
+        background-color: $coral-pink;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+      }
+    }
+  }
+}
+
+@keyframes darken {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

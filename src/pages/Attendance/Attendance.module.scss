@@ -1,0 +1,296 @@
+@import '../../libs/variables.scss';
+
+.attendance {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .header {
+    width: 100%;
+    background-color: $dark;
+    padding: 0px 70px 20px 70px;
+    display: flex;
+    flex-wrap: wrap;
+    .invite {
+      border-radius: 50%;
+      width: 31px;
+      height: 31px;
+      border: none;
+      background-color: white;
+      margin:0 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .userSelectorContainer {
+      position: relative;
+
+      .userSelector {
+        right: 0;
+        position: absolute;
+        transform: translateX(-200px);
+        z-index: 3;
+      }
+    }
+
+    .social{
+      display: flex;
+      .invitedUsers {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin-left: 10px;
+        flex-wrap: wrap;
+  
+        li {
+          margin: 0 5px 5px 5px;
+          position: relative;
+  
+          .delete {
+            background-color: $coral-pink;
+            width: 15px;
+            height: 15px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            padding-bottom: 1px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translateX(20%) translateY(-20%);
+            border-radius: 50%;
+            border: none;
+            line-height: 2px;
+            display: none;
+          }
+
+  
+          .imageContainer {
+            background-color: $light-periwinkle;
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 31px;
+            height: 31px;
+  
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+  
+        }
+      }
+    }
+    
+    .topHeader {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .sectionTitle {
+        color: $white;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        
+        span {
+          font-size: responsive(12, 16);
+        }
+
+        .title {
+          margin-right: 20px;
+          font-weight: bold;
+        }
+
+        .printName {
+          font-weight: normal;
+        }
+      }
+
+      .social {
+        display: flex;
+
+        .share {
+          background-color: $turquoise-blue;
+          border-radius: 15px;
+          border: none;
+          height: 31px;
+          padding: 5px 15px 5px 20px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1px;
+
+          svg {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+   
+  }
+
+  .sectionsMenu{
+    margin: 30px 70px 0;
+    li{
+      display: inline-block;
+      padding-right: 30px;
+      margin-right: 30px;
+      button{
+        border: none;
+        color: $slate;
+        background: none;
+        padding-bottom: 5px;
+        &.active{
+          color: $turquoise-blue;
+          border-bottom: 2px solid $turquoise-blue;
+        }
+      }
+    }
+    .break {
+      border-right: solid 1px $slate;
+    }
+  }
+
+  .content {
+    margin: 30px 70px;
+    position: relative;
+    flex: 1;
+    .searchInputContainer{
+      height: 52px;
+      max-width: 300px;
+      border: 1px solid $light-periwinkle;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      padding: 10px 15px;
+      position: relative;
+
+      svg {
+        margin-right: 5px;
+      }
+
+      input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        background: none;
+
+        &:placeholder {
+          color: $light-gray;
+        }
+      }
+    }
+    .attendancesGrid {
+      margin: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .mainInfo {
+      margin: 30px 0 50px 0;
+  
+      .attendanceTitle{
+        font-size: 30px;
+        font-weight: 300;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-style: italic;
+        color: $slate;
+      }
+
+      button {
+        background: none;
+        border: none;
+        display: block;
+        text-align: center;
+        word-wrap: break-word;
+        width: 100%;
+        max-width: 608px;
+        margin: 0 auto;
+      }
+
+      .title{
+        font-size: 60px;
+        // font-weight: 300;
+        margin-bottom: 25px;
+        display: block;
+        text-align: center;
+        word-wrap: break-word;
+        width: 100%;
+        max-width: 608px;
+        margin: 0 auto;
+        background: none;
+        border: none;
+        color: $slate;
+
+      }
+    }
+    .emptyCard{
+      width: 100%;
+      max-width: 329px;
+    }
+  }
+  .actionsMenuContainer{
+    position: fixed;
+    bottom: -62px;
+    left: 0;
+    width: 100%;
+    height: 62px;
+    background-color: $dark;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: row;
+    transition: bottom ease-in-out .3s;
+    z-index: 2;
+    &.actionsMenuActive{
+      bottom: 0;
+    }
+    .actionsMenu{
+      color: $white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      .left{
+        display: flex;
+        align-items: center;
+       
+        .separator{
+          margin:0 20px;
+          color: $white;
+          display: block;
+          font-size: 30px;
+        }
+      }
+      
+      .duplicate{
+        color: $white;
+        border-radius: 20px;
+        border-width: 2px;
+        border-color: $white;
+        padding: 5px 15px;
+        background: none;
+        box-shadow: none;
+        border-style: solid;
+      }
+      .delete{
+        color: $white;
+        border-radius: 20px;
+        border-width: 2px;
+        border-color: $coral-pink;
+        padding: 5px 15px;
+        background: $coral-pink;
+        box-shadow: none;
+        border-style: solid;
+      }
+    }
+  }
+}

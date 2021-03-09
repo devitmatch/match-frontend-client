@@ -1,0 +1,226 @@
+@import '../../libs/variables.scss';
+
+.card {
+  display: inline-block;
+  margin-bottom: 72px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  vertical-align: top;
+  width: 100%;
+
+  &.cardWithDoll {
+    &:hover {
+      background-color: $light-periwinkle;
+      transform: scale(1.01);
+
+      .imagePrint {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.cardContent {
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+.printGridItem {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow: hidden;
+  width: 100%;
+
+  .imagePrint {
+    background-position: top left;
+    max-height: 70vh;
+
+    .image {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .image {
+    min-height: 150px;
+    width: 100%;
+  }
+
+  .imageReplace {
+    background-color: $slate;
+    min-height: 150px;
+    width: 100%;
+  }
+
+  .info {
+    background-color: $white;
+    padding: 20px;
+    position: relative;
+  }
+
+  .name {
+    border-bottom: 1px solid $light-periwinkle;
+    color: $slate;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+
+    &.mini {
+      font-size: 9px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .tagArea {
+    display: flex;
+    justify-content: space-between;
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .tag {
+      background-color: $dark-gray;
+      border-radius: 4px;
+      color: $white;
+      font-weight: bold;
+      margin: 2px;
+      padding: 5px;
+
+      &.dig {
+        background-color: $blue-gray;
+      }
+
+      &.mini {
+        font-size: 9px;
+        padding: 2px;
+      }
+    }
+  }
+
+  .code {
+    color: $dark;
+    font-weight: bold;
+    text-decoration: none;
+    word-wrap: break-word;
+
+    &.mini{
+      font-size: 9px;
+    }
+  }
+}
+
+.imageButton {
+  position: relative;
+  width: 100%;
+}
+
+.cardDoll {
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.grayBackground {
+  background-color: $very-light-blue;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.dollMask {
+  height: 100%;
+  left: 50%;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+
+  .dollMaskPrint {
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+}
+
+.maskShadow {
+  display: block;
+  height: 100%;
+  left: 50%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  transform-origin: center;
+  transform: translateX(-50%);
+  width: auto !important;
+}
+
+.dolly {
+  height: 100%;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+
+  .background {
+    height: 100%;
+
+    > div {
+      height: calc(100% - 4px) !important;
+      left: 1px;
+      position: absolute;
+      top: 0;
+      width: fit-content;
+      z-index: -1;
+    }
+
+    .modelMaskWrapper {
+      height: 100% !important;
+      width: 100% !important;
+
+      > div {
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
+  }
+
+  .model {
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    width: auto !important;
+  }
+
+  .shadow {
+    height: 100%;
+    left: 50%;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: auto !important;
+  }
+}

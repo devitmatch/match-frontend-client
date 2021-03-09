@@ -1,0 +1,70 @@
+@import '../../libs/variables.scss';
+
+.LoginTemplate {
+  background-color: $very-light-blue;
+  min-height: 100vh;
+  position: relative;
+
+  .LoginTemplateHeader {
+    left: 0;
+    padding: 64px 52px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .LoginTemplateHeaderLogo {
+      display: block;
+      height: 36px;
+      width: auto;
+    }
+  }
+
+  .LoginTemplateContent {
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    padding: 0 52px;
+    width: 100%;
+
+    .LoginTemplateChild {
+      margin: 0 auto;
+      max-width: 528px;
+      width: 100%;
+
+      @media (min-width: 1000px) {
+        margin: 0 50vw 0 0;
+        max-width: 50vw;
+      }
+    }
+
+    .LoginTemplateImage {
+      display: none;
+
+      @media (min-width: 1000px) {
+        background-color: $grayish-blue;
+        display: block;
+        flex-basis: 50%;
+        height: 100%;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50vw;
+      }
+
+      .LoginTemplateImageFile {
+        border-bottom-left-radius: 1vw;
+        border-top-left-radius: 1vw;
+        box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
+        display: block;
+        height: auto;
+        max-width: 1120px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 43vw;
+      }
+    }
+  }
+}

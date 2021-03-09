@@ -1,0 +1,152 @@
+@import '../../libs/variables.scss';
+
+.modalContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+
+  .modal {
+    width: 100%;
+    max-width: 734px;
+    max-height: 80vh;
+    padding: 80px 114px;
+    background-color: $very-light-blue;
+    border-radius: 5px;
+    position: relative;
+    overflow: scroll;
+    z-index: 2;
+    &.spaced{
+      padding: 30px;
+    }
+
+    .close {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      background: none;
+      border: none;
+
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 32px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 25px 0 20px 0;
+    }
+
+    .label {
+      margin: 20px 0 10px 0;
+    }
+
+    .clientNameSection,
+    .statesSection {
+      position: relative;
+    }
+
+    .createCollectionForm {
+      position: relative;
+
+      .selectInput {
+        margin: 20px 0 0 0;
+      }
+
+      .checkboxContainer {
+        display: flex;
+
+        .checkmarkContainer {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin: 24px 55px 24px 0;
+          cursor: pointer;
+          user-select: none;
+          font-size: 14px;
+          vertical-align: middle;
+
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .checkmark {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            border: 1px solid $turquoise-blue;
+            border-radius: 3px;
+            background-color: #eee;
+
+            &:after {
+              content: '';
+              position: absolute;
+              display: none;
+              left: 6px;
+              top: 1px;
+              width: 4px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+
+          &:hover input~.checkmark {
+            background-color: #ccc;
+          }
+
+          input:checked~.checkmark {
+            background-color: $turquoise-blue;
+          }
+
+          input:checked~.checkmark:after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .message {
+      font-size: 16px;
+      font-weight: bold;
+      min-height: 65px;
+      margin: 0;
+      padding: 0;
+    }
+
+    hr {
+      margin: 0;
+      padding: 0;
+      border: 1px solid $light-periwinkle;
+    }
+
+    .actionButton {
+      margin: 22px 0;
+    }
+  }
+
+  .modalOverlay {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+  }
+}

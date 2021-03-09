@@ -1,0 +1,193 @@
+@import '../../libs/variables.scss';
+
+.myOrders {
+  @include hide-scrollbar;
+  margin: 0 72px;
+
+  .noOrders{
+    width: 100%;
+    text-align: center;
+  }
+
+  .filterOrdersWrapper {
+
+    .filterOrders {
+      align-items: center;
+      border-bottom: solid 1px $light-periwinkle;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding: 30px 0 20px;
+
+      @media (min-width: 1280px) {
+        flex-wrap: nowrap;
+      }
+
+      .dateRangeWrapper {
+        margin-right: 38px;
+        width: 312px;
+
+        @media (min-width: 1280px) {
+          margin-right: 52px;
+          width: 420px;
+        }
+      }
+
+      .checkShowOpenOrdersWrapper {
+        transform: translateY(6px);
+
+        @media (min-width: 1280px) {
+          flex-basis: 148px;
+        }
+      }
+
+      .listSelectorClientWrapper {
+        width: fit-content;
+        margin-right: 20px;
+        span div{
+          width: fit-content;
+        }
+
+        button {
+          height: 46px;
+          min-height: 46px;
+          width: fit-content;
+          padding: 0 25px;
+          .clearClient{
+            padding: 0 15px;
+            margin-top: 5px;
+          }
+          &:after{
+            content: none;
+          }
+        }
+
+        .clientNameSection {
+          position: relative;
+        }
+      }
+    }
+
+    .selectInput {
+      display: flex;
+      align-items: center;
+    }
+
+    .clearClient {
+      border: none;
+      padding: 0;
+      margin-left: 10px;
+      background: none;
+      height: 24px;
+
+      svg path {
+        fill: $slate;
+      }
+    }
+  }
+
+  .sections{
+    display: flex;
+    margin-bottom: 20px;
+    button{
+      border: none;
+      background: none;
+      margin-right: 30px;
+      font-weight: bold;
+      padding-bottom: 2px;
+      &.active{
+        color: $turquoise-blue;
+        border-bottom: 2px solid $turquoise-blue;
+      }
+    }
+  }
+
+  .orderItem {
+    position: relative;
+    background-color: $white;
+    display: flex;
+    padding: 10px 20px 10px 54px;
+    text-decoration: none;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 68px;
+    &:hover{
+      background-color: $dark;
+      .clientName, .orderDescription, .seeDetails {
+        color: $white;
+      }
+      .seeDetails path{
+        fill: $white;
+      }
+    }
+    .disapproved{
+      color: $coral-pink;
+    }
+    .disapprovedIcon{
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $coral-pink;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+    }
+
+    .clientName {
+      color: $slate;
+      font-weight: bold;
+      flex-basis: 20%;
+      font-family: Lato;
+      font-size: 16px;
+      letter-spacing: 1.14px;
+      padding: 0 52px 0 0;
+    }
+
+    .orderDescription {
+      color: $slate;
+      font-family: Lato;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 2.29px;
+      line-height: 1.13;
+      padding: 0 52px;
+
+      &.OPEN {
+        .descriptionInfo {
+          color: $coral-pink;
+        }
+      }
+    }
+    .approve{
+      margin-right: 35px;
+    }
+    .orderNumber{
+      font-style: italic;
+      font-weight: bold;
+      color: #4B5768;
+    }
+    .seeDetails{
+      border: none;
+      background: none;
+      span{
+        text-decoration: underline;
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+.loadMoreOrders {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: $turquoise-blue;
+  display: flex;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  width: 100%;
+}

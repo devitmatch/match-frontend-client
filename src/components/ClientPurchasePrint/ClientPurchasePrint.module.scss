@@ -1,0 +1,531 @@
+@import '../../libs/variables.scss';
+
+.clientEditPrint {
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh);
+  left: 0;
+  top: 0;
+  background-color: #e9ecef;
+  overflow-y: scroll;
+  z-index: 1;
+
+  .breadCrumb {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 70px;
+    top: 20px;
+    z-index: 1;
+
+    li {
+      padding-bottom: 3px;
+      border-bottom: 3px solid transparent;
+      opacity: 0.3;
+
+      &.active {
+        border-bottom: 3px solid $slate;
+        opacity: 1;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .next {
+      margin: 0 10px;
+      display: block;
+      width: 6px;
+      height: 6px;
+      border: 2px solid $slate;
+      border-top: none;
+      border-left: none;
+      border-radius: 1px;
+      margin-bottom: 2px;
+      transform: rotate(-45deg);
+      opacity: 0.3;
+    }
+  }
+
+  .backArrow {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 3px;
+    border-radius: 4px;
+    background-color: #4b5768;
+    position: absolute;
+    left: 70px;
+    top: 60px;
+    z-index: 3;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -2px;
+      bottom: 100%;
+      width: 12px;
+      height: 3px;
+      border-radius: 4px;
+      background-color: #4b5768;
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -2px;
+      top: 100%;
+      width: 12px;
+      height: 3px;
+      border-radius: 4px;
+      background-color: #4b5768;
+      transform: rotate(45deg);
+    }
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 1;
+
+    svg path {
+      fill: black;
+    }
+  }
+
+  .content {
+    display: flex;
+    margin: 20px 70px;
+    justify-content: space-between;
+    position: relative;
+
+    .dollsList {
+      margin-top: 50px;
+      width: 10%;
+
+      ul {
+        list-style: none;
+
+        li {
+          width: 90px;
+          height: 90px;
+          background-color: white;
+          margin-bottom: 10px;
+          border-radius: 4px;
+        }
+      }
+
+      .dollsNavigation {
+        display: flex;
+
+        .arrowButton {
+          width: 40px;
+          height: 40px;
+          border-radius: 4px;
+          background-color: $white;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:disabled {
+            opacity: 0.4;
+          }
+
+          &:first-child {
+            margin-right: 10px;
+          }
+
+          .arrowDown {
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-left: 2px solid $blue-gray;
+            border-bottom: 2px solid $blue-gray;
+            position: relative;
+            transform: translateY(2px) rotate(-45deg);
+            border-radius: 1px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 12px;
+              height: 2px;
+              background-color: $blue-gray;
+              left: -3px;
+              top: 1px;
+              transform: rotate(-45deg);
+              border-radius: 1px;
+            }
+          }
+
+          .arrowUp {
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-left: 2px solid $blue-gray;
+            border-bottom: 2px solid $blue-gray;
+            position: relative;
+            transform: translateY(-3px) rotate(135deg);
+            border-radius: 1px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 12px;
+              height: 2px;
+              background-color: $blue-gray;
+              left: -3px;
+              top: 1px;
+              transform: rotate(-45deg);
+              border-radius: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    .print {
+      text-align: center;
+      width: 20%;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img {
+        display: block;
+        width: 100%;
+        max-height: calc(100vh - 120px);
+      }
+
+      .rapport {
+        b {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .doll {
+      width: 20%;
+      height: fit-content;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        background-size: auto;
+        display: block;
+        max-height: calc(100vh - 120px);
+      }
+
+      .canvasContainer {
+        position: absolute;
+      }
+
+      .object {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .fabric {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 40vw;
+        width: 40vw;
+        background-position: center;
+        background-repeat: repeat;
+      }
+
+      .fabricShadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+
+  section {
+    margin-top: 50px;
+
+    .rangeArea {
+      margin: 20px 0;
+    }
+
+    .rangeContainer {
+      .label {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          display: block;
+        }
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
+
+      input[type=range] {
+        -webkit-appearance: none;
+        /* Hides the slider so that custom slider can be made */
+        width: 100%;
+        /* Specific width is required for Firefox. */
+        background: transparent;
+        /* Otherwise white in Chrome */
+      }
+
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+
+        height: 23px;
+        width: 10px;
+        border-radius: 5px;
+        background: $blue-gray;
+        cursor: pointer;
+        margin-top: -8px;
+      }
+
+      input[type=range]:focus {
+        outline: none;
+        background: #367ebd;
+      }
+
+      input[type=range]::-ms-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+      }
+
+      input[type=range]::-moz-range-thumb {
+        height: 23px;
+        width: 10px;
+        border-radius: 5px;
+        background: $blue-gray;
+        cursor: pointer;
+        margin-top: -8px;
+      }
+
+      /* All the same stuff for IE */
+      input[type=range]::-ms-thumb {
+        height: 23px;
+        width: 10px;
+        border-radius: 5px;
+        background: $blue-gray;
+        cursor: pointer;
+        margin-top: -8px;
+      }
+
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        background: $white;
+        border-radius: 1.3px;
+        border: 1px solid $light-periwinkle;
+      }
+
+      input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: #3071a9;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+      }
+
+      input[type=range]::-ms-fill-lower {
+        background: #2a6495;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      }
+
+      input[type=range]:focus::-ms-fill-lower {
+        background: #3071a9;
+      }
+
+      input[type=range]::-ms-fill-upper {
+        background: #3071a9;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      }
+
+      input[type=range]:focus::-ms-fill-upper {
+        background: #367ebd;
+      }
+    }
+
+    hr {
+      height: 0px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $blue-gray;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+
+      button {
+        min-width: 150px;
+        margin-top: 10px;
+        width: 49%;
+        max-width: unset;
+      }
+
+      .reserveButton {
+        border: 2px solid $turquoise-blue;
+        color: $turquoise-blue;
+        background: none;
+        font-weight: bold;
+      }
+    }
+
+    .editPrintButtonContainer,
+    .observationButtonContainer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+
+      .editPrintButton,
+      .observationButton {
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-radius: 5px;
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: $blue-gray;
+      }
+
+
+    }
+
+    .observationButtonContainer {
+      margin-top: 30px;
+
+      .observationButton {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .colorSelectorLabel {
+    font-weight: lighter;
+    margin: 30px 0 10px 0;
+  }
+
+  .colorSelectorContainer {
+    position: relative;
+
+    .colorSelector {
+      position: relative;
+      border: none;
+      height: 60px;
+      width: calc(100% - 60px);
+      display: flex;
+      border-radius: 5px;
+      overflow: hidden;
+
+      img {
+        display: block;
+        height: 100%;
+        max-width: calc(100% - 60px);
+        object-fit: cover;
+      }
+
+      div {
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    ul {
+      position: absolute;
+      margin: 0;
+      list-style: none;
+      padding: 2px;
+      width: calc(100% - 60px);
+      max-height: 200px;
+      overflow-y: scroll;
+      z-index: 1;
+      top: 0;
+      background-color: $white;
+      box-shadow: 5px 5px 1px solid rgba(0, 0, 0, 1);
+
+      li {
+        height: 60px;
+        width: 100%;
+        border: 2px solid $white;
+        cursor: pointer;
+
+        &:hover {
+          border: 2px solid $turquoise-blue;
+        }
+
+        img {
+          display: block;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .observationFieldContainer {
+    margin-bottom: -30px;
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      border: 1px solid $light-periwinkle;
+      padding: 5px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: $turquoise-blue;
+      padding: 5px 10px;
+      color: $white;
+      border: none;
+      border-radius: 3px;
+    }
+  }
+}

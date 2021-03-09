@@ -1,0 +1,19 @@
+@import '../../libs/variables.scss';
+
+.dateRange {
+  padding: 10px 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid $light-periwinkle;
+  .dateInput {
+    text-align: center;
+    padding-left: 18px;
+    cursor: pointer;
+    
+    & > div {
+      border: none !important;
+    }
+  }
+}

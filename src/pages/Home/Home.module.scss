@@ -1,0 +1,255 @@
+@import '../../libs/variables.scss';
+
+.home{
+  width: 100%;
+  padding: 0 70px;
+  .lastAttendance{
+    margin: 40px 0;
+    .title{
+      color: $slate;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .attendance{
+      width: 100%;
+      padding: 30px 20px;
+      background-color: $white;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      & > div{
+        margin: 0 10px;
+      }
+      .name{
+        font-weight: bold;
+        color: black;
+      }
+      .date{
+        font-weight: bold;
+        color: $dark-gray;
+        font-size: 14px;
+      }
+      .link{
+        text-decoration: none;
+        color: black;
+        .text{
+          font-size: 14px;
+          text-decoration: underline;
+        }
+        .icon{
+          margin-left: 10px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .cardLinks{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .card{
+      position: relative;
+      min-width: 24%;
+      max-width: 24%;
+      padding-top: 34%;
+      border-radius: 8px;
+      background-color: $slate;
+      overflow: hidden;
+      background-size: cover;
+      .info{
+        position: absolute;
+        bottom : 5%;
+        height: 40%;
+        width: 100%;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 20px;
+        .title{
+          font-size: responsive(12, 18, 1024, 1388);
+          font-weight: bold;
+          margin: 15% 0 5% 0;
+          color: black;
+        }
+        .description{
+          font-size: responsive(10, 14, 1024, 1388);
+          text-align: center;
+          font-weight: bold;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+  .ordersInProgress{
+    margin-top: 40px;
+    .title{
+      color: $slate;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .ordersContainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .order{
+        background-color: $white;
+        border-radius: 8px;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .clientName{
+          font-weight: bold;
+          color: $slate;
+        }
+        .status{
+          font-weight: bold;
+        }
+        .seeDetails{
+          color: black;
+          border: none;
+          background: none;
+          text-decoration: underline;
+          .icon{
+            margin-left: 10px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .seeAllOrders{
+      display: block;
+      width: fit-content;
+      margin: 0 0 40px 0;
+      font-weight: bold;
+    }
+    
+  }
+  .lastOrder{
+    margin: 40px 0;
+    .title{
+      color: $slate;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .orderNumber{
+      font-weight: bold;
+      font-size: 14px;
+      .label{
+        margin-right: 10px;
+        font-size: 16px;
+
+      }
+    }
+    .lastOrderContainer{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: $white;
+      border-radius: 8px;
+      overflow: hidden;
+      .header{
+        padding: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        color: $slate;
+      }
+      .products{
+        padding-top: 10px;
+        .product{
+          width: calc(100% - 80px);
+          margin: 20px 40px;
+          padding: 20px 0;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #d6d8da;
+          
+          .productInfo{
+            display: flex;
+            .image{
+              width: 170px;
+              height: 170px;
+              border-radius: 8px;
+              overflow: hidden;
+              img{
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+            .description{
+              display: flex;
+              flex-direction: column;
+              margin-left: 50px;
+              font-weight: bold;
+              color: $slate;
+
+              .code{
+                font-weight: bold;
+                margin-bottom: 20px;
+              }
+              .exclusivity,.fabric{
+                font-size: 12px;
+              }
+              .exclusivity{
+                display: flex;
+                flex-direction: column;
+                span{
+                font-size: 12px;
+
+                }
+              }
+            }
+          }
+          .price{
+            font-weight: bold;
+          }
+        }
+        hr {
+          margin: 0 40px;
+          border: none;
+          border-top: 2px solid $ice-blue;
+        }
+      }
+    }
+    .noOrderContainer{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background-color: $white;
+      border-radius: 8px;
+      flex-direction: column;
+      margin-bottom: 80px;
+      .noOrders{
+        margin: 10px;
+        font-weight: bold;
+      }
+      .ordersHere{
+        font-size: 12px;
+        font-weight: bold;
+        color: $light-gray;
+      }
+    }
+    .seeMore{
+      width: 140px;
+      margin: 5px 35px 15px 35px;
+      font-weight: bold;
+    }
+  }
+  video{
+    background-color: $slate;
+    width: calc(100% - 40px);
+
+    margin: 0 20px;
+  }
+  .beforeStartMessage{
+    color: $dark;
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../libs/variables.scss';
+
+.modalContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+
+  .modal {
+    width: 100%;
+    max-width: 734px;
+    max-height: 80vh;
+    padding: 40px 114px;
+    background-color: $very-light-blue;
+    border-radius: 5px;
+    position: relative;
+    overflow: scroll;
+    z-index: 2;
+    &.fixedHeight{
+      min-height: 80vh;
+    }
+    &.fullWidth{
+      padding: 40px;
+    }
+
+    .close {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      background: none;
+      border: none;
+
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 32px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 25px 0 20px 0;
+    }
+
+    hr {
+      margin: 0;
+      padding: 0;
+      border: 1px solid $light-periwinkle;
+    }
+
+    .actionButton {
+      margin: 22px 0;
+    }
+  }
+
+  .modalOverlay {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+  }
+}

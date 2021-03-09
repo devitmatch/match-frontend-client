@@ -1,0 +1,260 @@
+@import '../../libs/variables.scss';
+
+.header {
+  padding: 12px 70px 12px 70px;
+  background-color: $dark;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -1px;
+  padding-bottom: 10px;
+
+  @media (min-width: 1024px) {
+    min-height: 51px;
+  }
+
+  .logo {
+    width: 125px;
+  }
+  
+
+  .mainMenu {
+    flex: 1;
+    position: relative;
+    ul {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      max-width: 70%;
+  
+      li {
+        margin: 0 10px;
+        a {
+          color: #fff;
+          text-decoration: none;
+  
+          &:hover {
+            color: $light-blue;
+            opacity: 0.7;
+          }
+  
+          &.activeLink {
+            color: $light-blue;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+    
+  .optionsMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      margin-top: 0;
+      width: auto;
+    }
+
+
+    &__item {
+      cursor: pointer;
+
+      &:hover {
+        path {
+          fill: $light-blue;
+          opacity: 0.7;
+        }
+      }
+
+      &:nth-child(1) {
+        margin-right: 40px;
+      }
+
+      &:nth-child(2) {
+        // margin-right: 42px;
+      }
+
+      &:nth-child(3) {
+        margin-right: 40px;
+      }
+
+      &:nth-child(4) {
+        margin-right: 32px;
+      }
+
+      &.userMenu {
+        position: relative;
+        margin-left: 20px;
+      }
+    }
+
+    &__allViewed {
+      position: relative;
+
+      &:after {
+        background-color: $light-red;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+      }
+    }
+
+    .avatarButton {
+      background: none;
+      border: none;
+    }
+
+    .logoutMenu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 20px 40px;
+      margin-top: 10px;
+      border-radius: 5px;
+      background-color: $white;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 19;
+
+      .logoutMenuInfos {
+        margin: 0 0 0 15px;
+
+        p {
+          color: $slate;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        a,
+        button {
+          background: none;
+          border: none;
+          color: $blue-gray;
+          font-family: Lato;
+          font-size: 14px;
+        }
+
+        a {
+          text-decoration: none;
+          white-space: nowrap;
+          
+        }
+      }
+    }
+
+    .language {
+      border: none;
+      background: none;
+      color: $white;
+      margin-bottom: 5px;
+
+      &:hover {
+        color: $light-blue;
+        opacity: 0.7;
+      }
+
+      &.active {
+        color: $turquoise-blue;
+      }
+    }
+
+    .languageSeparator {
+      color: $white;
+      margin: 0 10px;
+    }
+    .languageDivisor {
+      color: $white;
+      margin-left: 25px;
+    }
+  }
+
+  .cart,
+  .notifications {
+    background: none;
+    border: none;
+  }
+  .notifications{
+    margin-left: 20px;
+  }
+}
+
+.chatButton{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  align-items: flex-end;
+  border: none;
+  background: none;
+  z-index: 10;
+  cursor: pointer;
+  .message{
+    display: none;
+    margin-right: 25px;
+    max-width: 200px;
+    text-align: left;
+    background-color: $dark;
+    color: $white;
+    padding: 16px 27px;
+    border-radius: 6px;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      right: -20px;
+      bottom: 15px;
+      width: 0px;
+      height: 0px;
+      border-top: 10px solid $black;
+      border-left: 10px solid $black;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+  }
+  &:hover{
+    .message{
+      display: block;
+    }
+  }
+  .avatarContainer{
+    position: relative;
+    .unreadMessages{
+      position: absolute;
+      right: -5px;
+      padding: 1px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50px;
+      color: $white;
+      background-color: $coral-pink;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img{
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
+}

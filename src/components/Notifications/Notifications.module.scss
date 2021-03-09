@@ -1,0 +1,93 @@
+@import '../../libs/variables.scss';
+
+.Notifications {
+  background-color: $white;
+  border-radius: 6px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-height: 416px;
+  max-width: 488px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 10px;
+  position: absolute;
+  right: 138px;
+  top: 64px;
+  width: 100%;
+  z-index: 19;
+
+  .notificationBox {
+    align-items: center;
+    border-bottom: solid $very-light-blue 1px;
+    display: flex;
+    font-family: Lato;
+    font-size: 14px;
+    letter-spacing: 0.45px;
+    list-style: none;
+    padding: 10px 0 18px;
+    position: relative;
+
+    &.notificationBoxWithoutImage {
+      display: block;
+      padding: 8px 0 16px;
+
+      .notificationBoxText {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .notificationBoxImage {
+      background-position: center;
+      background-size: cover;
+      flex-basis: 86px;
+      height: 86px;
+      width: 86px;
+    }
+
+    .notificationBoxText {
+      flex-basis: calc(100% - (86px + 18px));
+      margin-left: 18px;
+
+      .notificationBoxTitle {
+        line-height: 1.36;
+        margin-bottom: 6px;
+      }
+
+      .notificationBoxLink {
+        a {
+          color: $blue;
+          font-weight: bold;
+          line-height: 1.43;
+          text-decoration: underline;
+        }
+      }
+
+      .notificationBoxTime {
+        bottom: 4px;
+        font-size: 12px;
+        letter-spacing: 0.1px;
+        line-height: 1.67;
+        position: absolute;
+        right: 10px;
+        text-align: right;
+
+        .timeIconWrapper {
+          display: inline-block;
+          height: 14px;
+          line-height: 1.67;
+          margin-right: 4px;
+          transform: translateY(2px);
+          width: 14px;
+        }
+
+        * {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

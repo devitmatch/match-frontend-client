@@ -1,0 +1,66 @@
+@import '../../libs/variables.scss';
+
+.modalContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  .modal {
+    width: 100%;
+    max-width: 734px;
+    height: 100%;
+    max-height: 364px;
+    padding: 80px 114px;
+    background-color: $very-light-blue;
+    border-radius: 5px;
+    position: relative;
+
+    .close {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      background: none;
+      border: none;
+
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 32px;
+    }
+
+    .message {
+      font-size: 16px;
+      font-weight: bold;
+      min-height: 65px;
+      margin: 0;
+      padding: 0;
+    }
+
+    hr {
+      margin: 0;
+      padding: 0;
+      border: 1px solid $light-periwinkle;
+    }
+
+    .buttonsContainer {
+      margin-top: 22px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: calc(100% - 11px);
+
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../libs/variables.scss';
+
+.tagSelectors {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+  margin-bottom: 25px;
+
+  .tagSelectorContainer {
+    position: relative;
+
+    .selector {
+      margin: 0 20px 20px 20px;
+      text-align: left;
+      background-color: transparent;
+      border: none;
+      width: fit-content;
+      padding-right: 20px;
+      position: relative;
+
+      &.active {
+        color: $turquoise-blue;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 1.5px solid $turquoise-blue;
+        border-left: 1.5px solid $turquoise-blue;
+        width: 6px;
+        height: 6px;
+        right: 0;
+        transform: rotate(-45deg) translateY(40%) translateX(-40%);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .tagList {
+      display: none;
+      position: absolute;
+      left: -80px;
+      top: 20px;
+
+      >div {
+        max-width: 280px;
+        min-width: 200px;
+      }
+    }
+
+    &:hover {
+      .tagList {
+        display: block;
+      }
+    }
+  }
+
+  &.complete {
+    justify-content: flex-start;
+    margin-left: -20px;
+    width: calc(100% + 20px);
+    margin-bottom: 0;
+
+    .tagSelectorContainer {
+      margin: 0 20px;
+    }
+
+    .selector {
+      margin: 0 0 20px 0;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import '../../libs/variables.scss';
+
+.inputContainer {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: $white;
+  border-radius: 6px;
+
+  .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.inputArea {
+  position: relative;
+  max-width: 353.5px;
+  display: flex;
+
+  .icon {
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 20px;
+  }
+}
+
+.fileInput {
+  color: transparent;
+  width: 100%;
+  height: 52px;
+  border: 1px solid $light-periwinkle;
+  border-radius: 6px;
+  text-align: left;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  max-width: 353.5px;
+  line-height: 1.4em;
+
+  &.fullWidth {
+    max-width: initial;
+  }
+
+  &::before {
+    color: black;
+    width: calc(100% - 65px);
+  }
+}
+
+.actionButton {
+  position: relative;
+  color: transparent;
+  text-decoration: none;
+  padding: 9px 35px;
+  background-color: $turquoise-blue;
+  border-radius: 3px;
+  font-size: 16px;
+  height: 52px;
+  width: 100%;
+  max-width: 246px;
+
+  &::before {
+    color: $white;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+  }
+}
+
+.fileInput,
+.actionButton {
+  &.iconContainer {
+    width: 52px;
+    background-color: transparent;
+  }
+
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  &::before {
+    content: attr(data-title);
+    display: inline-block;
+    padding: 15px;
+
+    outline: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &.error {
+    border: 1px solid $coral-pink;
+    font-weight: normal;
+  }
+}
+
+.removeFile {
+  position: absolute;
+  right: 10px;
+  top: 52%;
+  border: none;
+  background-color: $white;
+}
+
+.removeListFile {
+  border: none;
+  background-color: transparent;
+
+  height: 24px;
+}
+
+.imageList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  list-style: none;
+
+  .imageItem {
+    margin: 10px 10px 20px 0;
+
+    img {
+      display: block;
+      max-height: 333px;
+      max-width: 353.5px;
+      width: 100%;
+    }
+
+    &.main {
+      margin: 10px 0 20px 0;
+    }
+
+    &.mini {
+      img {
+        max-height: 160px;
+        width: auto;
+      }
+    }
+
+    .imageName {
+      display: block;
+      margin: 10px 0;
+      color: $blue;
+      font-size: 14px;
+    }
+
+    .delete {
+      border: none;
+      background-color: transparent;
+      text-decoration: underline;
+      color: $coral-pink;
+      font-size: 14px;
+    }
+  }
+}

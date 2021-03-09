@@ -1,0 +1,283 @@
+@import '../../libs/variables.scss';
+
+.briefingFormModal{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $very-light-blue;
+  z-index: 15;
+  overflow: scroll;
+  header{
+    background-color:$dark;
+    padding: 20px 70px;
+    display: flex;
+    align-items: center;
+    .closeButton{
+      background: none;
+      color: $white;
+      border: none;
+    }
+    .backIcon{
+      display: inline-block;
+      transform: rotate(180deg);
+      margin-right: 10px;
+    }
+  }
+  .briefingForm{
+    margin: 30px 70px;
+    padding: 25px 40px;
+    border-radius: 6px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    hr{
+      border: none;
+      border-top: 1px solid $grayish-blue;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      
+      input,textarea{
+        display: block;
+        font-size: responsive(14, 16);
+        font-family: 'Lato-Regular', sans-serif;
+        color: $slate;
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 0 10px;
+        text-align: left;
+        resize: none;
+        width: 100%;
+        cursor: pointer;
+      }
+      textarea{
+        height: 100px;
+      }
+      .mainInfo{
+        max-width: 600px;
+        width: 100%;
+        .clientNameField{
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          margin-bottom: 20px;
+          font-size: 12px;
+          h3{
+            margin-right: 10px;
+          }
+          input{
+            font-size: 12px;
+          }
+        }
+        .briefingName{
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
+        .description{
+          margin-top: 40px;
+          font-size: 16px;
+        }
+        .fileArea{
+          padding: 0 10px;
+          margin: 40px 0 20px 0;
+          position: relative;
+          cursor: pointer;
+
+          input{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+          .fileInstructions{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+          }
+          .instructionsTitle{
+            font-weight: bold;
+          }
+          .uploadButton{
+            background-color: $white;
+            padding: 15px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+        .referenceItem{
+          display: flex;
+          margin: 20px 0;
+          .selectCover{
+            color: $turquoise-blue;
+            margin-left: 10px;
+            text-decoration: underline;
+            border: none;
+          }
+          .cover{
+            color: $turquoise-blue;
+            font-weight: bold;
+            margin-left: 5px;
+          }
+          .imageContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: $white;
+            border-radius: 3px;
+            img{
+              width: 50%;
+            }
+          }
+          .referenceImage{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+          }
+          .infoPlaceholder{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 20px 30px;
+            span{
+              background-color: $grayish-blue;
+              height: 15px;
+              border-radius: 1px;
+            }
+            .imageNamePlaceholder{
+              width: 80px;
+            }
+            .imageDetailsPlaceholder{
+              width: 200px;
+            }
+          }
+          .editingReferenceTitle{
+            border: none;
+            background: none;
+            display: flex;
+            align-items: center;
+            span{
+              margin-left: 10px;
+            }
+          }
+          .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 20px 30px;
+            .imageName{
+              font-weight: bold;
+              display: flex;
+            }
+            .delete{
+
+            }
+          }
+        }
+      }
+      .printsContainer{
+        width: 100%;
+        margin: 40px 0;
+        .containerHeader{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 11px;
+        }
+        .printsTitle{
+          font-size: 30px;
+          font-weight: bold;
+        }
+        .addPrints{
+          background-color: $white;
+          padding: 15px 20px;
+          border-radius: 30px;
+          font-weight: bold;
+          font-size: 14px;
+          border: none;
+        }
+      }
+      
+      .delete{
+        display: block;
+        color: $coral-pink;
+        background: none;
+        border: none;
+        text-decoration: underline;
+      }
+      
+    }
+    section{
+      width: 30%;
+      min-width: 250px;
+    }
+    .printsGrid{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .cardPlaceholder{
+        position: relative;
+        background-color: white;
+        border-radius: 4px;
+        width: 24%;
+        padding-top: 24%;
+        padding-bottom: 10px;
+      }
+      .imageContainer{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        height: calc(100% - 50px);
+        background-color: $grayish-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+          max-width: 50px;
+        }
+      }
+      .title{
+        display: block;
+        background-color: $grayish-blue;
+        width: 50%;
+        height: 20px;
+        margin:5px 0 5px 20px;
+        border-radius: 1px;
+      }
+      .column{
+        width: 24%;
+      }
+    }
+  }
+  .saveContainer{
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto;
+    .save{
+      padding: 15px 15px;
+      font-size: 14px;
+    }
+  }
+}
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}

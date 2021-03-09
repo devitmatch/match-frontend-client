@@ -1,0 +1,493 @@
+@import '../../libs/variables.scss';
+
+.content {
+  display: flex;
+  // margin: 20px 70px;
+  justify-content: space-between;
+  position: relative;
+  min-height: 100vh;
+
+  .fabricsList {
+    margin: 50px 0 0 20px;
+    width: 10%;
+
+    ul {
+      list-style: none;
+
+      li {
+        width: 90px;
+        height: 90px;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        &.active {
+          border: 4px solid $turquoise-blue;
+        }
+
+        button {
+          border: none;
+          background: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .fabricsNavigation {
+      display: flex;
+
+      .arrowButton {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: $white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:disabled {
+          opacity: 0.4;
+        }
+
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        .arrowDown {
+          display: block;
+          width: 7px;
+          height: 7px;
+          border-left: 2px solid $blue-gray;
+          border-bottom: 2px solid $blue-gray;
+          position: relative;
+          transform: translateY(2px) rotate(-45deg);
+          border-radius: 1px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: $blue-gray;
+            left: -3px;
+            top: 1px;
+            transform: rotate(-45deg);
+            border-radius: 1px;
+          }
+        }
+
+        .arrowUp {
+          display: block;
+          width: 7px;
+          height: 7px;
+          border-left: 2px solid $blue-gray;
+          border-bottom: 2px solid $blue-gray;
+          position: relative;
+          transform: translateY(-3px) rotate(135deg);
+          border-radius: 1px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: $blue-gray;
+            left: -3px;
+            top: 1px;
+            transform: rotate(-45deg);
+            border-radius: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .fabric {
+    text-align: center;
+    margin-top: 70px;
+    margin: 50px 13%;
+
+    img {
+      display: block;
+      width: 30vw;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  section {
+    // width: 30%;
+    // margin-top: 50px;
+    background-color: $white;
+    margin-top: 0;
+    padding: 0 30px;
+    width: 30%;
+    position: relative;
+
+    .sectionTitle {
+      color: $slate;
+      font-size: 25px;
+      letter-spacing: 0.6px;
+      line-height: 27px;
+      font-weight: normal;
+      margin-bottom: 32px;
+
+      b {
+        color: inherit;
+        font-size: inherit;
+        letter-spacing: inherit;
+        line-height: inherit;
+        font-weight: bold;
+      }
+    }
+
+    .selectorContainer {
+      position: relative;
+    }
+
+    hr {
+      height: 0px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $blue-gray;
+      margin: 20px 0;
+    }
+
+    .fabricSmallDesc {
+      font-weight: bold;
+      margin: 25px 0 5px 0;
+    }
+
+    .fabricDesc {
+      margin: 16px 0;
+      color: $slate;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    hr {
+      height: 1px;
+      background-color: $ice-blue;
+    }
+
+    .buttons {
+      width: 100%;
+      // display: flex;
+      // justify-content: space-between;
+      // flex-wrap: wrap;
+      // margin-bottom: 10px;
+
+      // button {
+      //   min-width: 150px;
+      //   margin-top: 10px;
+      //   width: 49%;
+      //   max-width: unset;
+      // }
+
+      // .reserveButton {
+      //   border: 2px solid $turquoise-blue;
+      //   color: $turquoise-blue;
+      //   background: none;
+      //   font-weight: bold;
+      // }
+
+      .defaultActionButton {
+        margin: 0 0 8px 0;
+        display: block;
+        width: 100%;
+        height: 52px;
+        border-radius: calc(52px / 2);
+        max-width: 100%;
+      }
+    }
+  }
+
+  .fabricsOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 10px 0;
+
+    .fabricSelectorLabel {
+      color: $slate;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 21px;
+      width: fit-content;
+    }
+
+    .showFabrics {
+      background: none;
+      color: $turquoise-blue;
+      text-decoration: underline;
+      font-size: 16px;
+      padding: 0;
+      border: none;
+      height: fit-content;
+    }
+  }
+
+  .fabricDetails {
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // font-size: 16px;
+    color: $slate;
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 48px;
+
+    div {
+      min-width: fit-content;
+      width: 50%;
+      margin-bottom: 5px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+  .fabricsModalContainer {
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    // padding: 72px;
+    padding: 0;
+    align-items: center;
+    z-index: 3;
+
+    .modal {
+      background-color: $ice-blue;
+      padding: 112px 72px 72px;
+      width: 100%;
+      // height: calc(100vh - 72px);
+      height: 100vh;
+      position: relative;
+      // border-radius: 5px;
+      overflow-y: scroll;
+
+      .modalContent {
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 18px;
+      }
+
+      .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: none;
+        background: none;
+        z-index: 3;
+
+        path {
+          fill: $dark;
+        }
+      }
+
+      input {
+        border: none;
+        border-radius: 5px;
+        color: $slate;
+        font-family: Lato;
+        font-size: 14px;
+        height: 51px;
+        line-height: 20.2px;
+        max-width: 328px;
+        padding: 12px 12px 12px 48px;
+        width: 100%;
+      }
+
+      .inputWrapper {
+        position: relative;
+
+        svg {
+          position: absolute;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        height: fit-content;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: calc(100% + 30px);
+        margin-left: -16px;
+      }
+
+      li {
+        overflow: hidden;
+        width: responsive(200, 300);
+        height: responsive(250, 350);
+        display: block;
+        background-color: $white;
+        margin: 15px;
+        border-radius: 4px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+        position: relative;
+
+        @media (max-width: 1025px) {
+          width: 350px;
+        }
+
+        @media (max-width: 800px) {
+          width: 220px;
+        }
+
+        button {
+          border: none;
+          width: 100%;
+
+          &:hover {
+            .fabricInfoContainer {
+              max-height: 100%;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .fabricInfoContainer {
+          text-transform: capitalize;
+          text-align: left;
+          color: $slate;
+          overflow: hidden;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          max-height: 50px;
+          background-color: $white;
+          transition: max-height .6s ease-in-out;
+        }
+
+        .fabricName {
+          color: $slate;
+          font-size: 16px;
+          line-height: 21px;
+          margin: 16px;
+          z-index: 5;
+        }
+
+        .fabricInfo {
+          margin: 8px 16px 20px;
+
+          .item {
+            color: $slate;
+            font-size: 14px;
+            line-height: 21px;
+          }
+
+          span {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 21px;
+          }
+        }
+      }
+    }
+  }
+
+  .formLabel {
+    font-weight: bold;
+  }
+
+  .formInput {
+    width: 100%;
+    max-width: 107px;
+    height: 52px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    margin: 10px 10px 30px 0;
+  }
+
+  .formButtonArea {
+    text-align: right;
+    margin-top: 30px;
+  }
+
+  .backColor {
+    color: $slate;
+    font-size: 16px;
+    letter-spacing: 0.69px;
+    line-height: 18px;
+    width: 110px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    width: fit-content;
+    position: absolute;
+    top: 36px;
+    left: 36px;
+
+    .icon {
+      margin-right: 12px;
+
+      svg {
+        transform: rotate(180deg) translateY(1px);
+      }
+    }
+  }
+
+  .head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    background-color: $dark;
+
+    .backFabric {
+      color: $white;
+      font-size: 16px;
+      letter-spacing: 0.69px;
+      line-height: 18px;
+      width: 110px;
+      font-weight: bold;
+      border: none;
+      background: none;
+      width: fit-content;
+      position: absolute;
+      top: 50%;
+      left: 72px;
+      transform: translateY(-50%);
+  
+      .icon {
+        margin-right: 12px;
+  
+        svg {
+          transform: rotate(180deg) translateY(1px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@import '../../libs/variables.scss';
+
+.checkmarkcontainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  vertical-align: middle;
+
+  &.marked {
+    color: $turquoise-blue;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 1px solid $turquoise-blue;
+    border-radius: 3px;
+    background-color: #eee;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 6px;
+      top: 1px;
+      width: 4px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover input~.checkmark {
+    background-color: #ccc;
+  }
+
+  input:checked~.checkmark {
+    background-color: $turquoise-blue;
+  }
+
+  input:checked~.checkmark:after {
+    display: block;
+  }
+}
+
+.checkInputContainer {
+  &.error {
+    color: $coral-pink;
+  }
+
+  &.topMenu {
+    margin: 0 20px;
+
+    .checkmarkcontainer {
+      margin-bottom: 0;
+    }
+  }
+
+  &.cardCheck {
+    margin: 0;
+    padding: 0;
+
+    .checkmark {
+      height: 24px;
+      width: 24px;
+      border: 2px solid white;
+      background: none;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+
+      &:after {
+        border: solid $dark;
+        border-width: 0 2px 2px 0;
+        left: 7px;
+        top: 1px;
+        width: 5px;
+        height: 14px;
+      }
+    }
+
+    &:hover input~.checkmark {
+      background-color: white;
+    }
+
+    input:checked~.checkmark {
+      background-color: white;
+    }
+  }
+}

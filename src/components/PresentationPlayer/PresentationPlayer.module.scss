@@ -1,0 +1,266 @@
+@import '../../libs/variables.scss';
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+.PresentationPlayer {
+  background-color: $very-light-blue;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.4s ease;
+  width: 100vw;
+  z-index: 5;
+
+  .presentationInfo {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 60px;
+    top: 80px;
+    transform-origin: top right;
+    transform: rotate(-90deg);
+    transform: translateY(100%) rotate(-90deg);
+    width: calc(100vh - 336px);
+
+    .presentationName {
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 30px;
+    }
+
+    .presentationSection {
+      display: inline-block;
+      font-size: 10px;
+    }
+  }
+
+  .presentationSlidePrint,
+  .presentationSlideConcept {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.5s cubic-bezier(0.55, 0, 1, 0.45);
+    width: 100%;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .presentationSlidePrint {
+    .printInfo {
+      left: 40px;
+      position: absolute;
+      top: 40px;
+
+      .printRapportSize {
+        font-weight: normal;
+      }
+    }
+
+    .printDollContainer {
+      display: flex;
+      height: 100vh;
+      padding: 0 132px 0 40px;
+      width: 100%;
+
+      .dollContainer {
+        flex-basis: 30%;
+        padding: 98px 20px 20px 0;
+
+        .dollWrapper {
+          display: inline-block;
+          left: 50%;
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative;
+          transform: translateX(-50%);
+          width: auto;
+
+
+
+          .masksWrapper {
+            position: absolute;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+          
+            .dollMaskPrint {
+              position: absolute;
+              height: 100%;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 100%;
+            }
+          }
+
+          .dollTexture,
+          .dollShadow {
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            max-height: 100%;
+            max-height: calc(100vh - 118px);
+            max-width: 100%;
+          }
+
+          .dollShadow {
+            bottom: 0;
+            left: 0;
+            mix-blend-mode: multiply;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+
+          .dollTexture {
+            position: relative;
+          }
+
+          .dollPrint {
+            background-size: 3.125%;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 100%;
+            height: calc(100% - 2px);
+            left: 1px;
+            position: absolute;
+            top: 1px;
+            width: calc(100% - 2px);
+          }
+        }
+      }
+
+      .printContainer {
+        flex-basis: 70%;
+        position: relative;
+
+        .printContent {
+          background-position: center;
+          background-size: 33.125%;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .conceptContent {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 50vh;
+      width: 100%;
+    }
+  }
+
+  .presentationSlideConcept {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 40px 132px 40px 40px;
+    text-align: center;
+
+    .imageWrapper {
+      display: inline-block;
+
+      .conceptImage {
+        display: block;
+        max-height: 80vh;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+      }
+
+      .conceptImageDescription {
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .closePresentation {
+    background: none;
+    border: none;
+    line-height: 0;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+  }
+
+  .presentationControls {
+    bottom: 40px;
+    height: auto;
+    position: absolute;
+    right: 40px;
+    width: 52px;
+
+    .previousControl,
+    .nextControl,
+    .playControl,
+    .pauseControl {
+      align-items: center;
+      border-radius: 6px;
+      border: none;
+      display: flex;
+      height: 52px;
+      justify-content: center;
+      margin-bottom: 10px;
+      width: 52px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .previousControl,
+    .nextControl {
+      background-color: $slate;
+    }
+
+    .playControl,
+    .pauseControl {
+      background-color: $turquoise-blue;
+    }
+
+    .previousControl {
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  .slideCounter {
+    bottom: 40px;
+    color: $blue-gray;
+    display: none;
+    font-size: 14px;
+    font-weight: bold;
+    left: 40px;
+    letter-spacing: 10.69px;
+    position: absolute;
+  }
+}

@@ -1,0 +1,201 @@
+@import '../../libs/variables.scss';
+
+.itemsSelector {
+  width: fit-content;
+  max-height: 350px;
+  border-radius: 6px;
+  border: 1px solid $light-periwinkle;
+  border-top: none;
+  background-color: $white;
+  padding: 22px 13px 22px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 0px;
+  position: absolute;
+
+  &.fullWidth {
+    width: 100%;
+    border-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  .listTitle {
+    font-size: 12px;
+    color: $blue-gray;
+    margin: 0;
+    padding: 16px 12px 0;
+  }
+
+  .itemsList {
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: calc(100% + 15px);
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 50px;
+      background-color: $blue-gray;
+      outline: none;
+    }
+
+    li {
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      padding: 3px 3px 3px 12px;
+      min-height: 35px;
+      margin-bottom: 2px;
+
+      span {
+        white-space: nowrap;
+        color: #000;
+        font-size: 14px;
+      }
+
+      .select {
+        border-radius: 3px;
+        background-color: $turquoise-blue;
+        color: $white;
+
+        width: auto;
+        margin-left: 5px;
+        padding: 7px 14px;
+
+        font-size: 14px;
+        border: none;
+        opacity: 0;
+        transition: opacity .4s ease, background-color .4s ease;
+
+        &:hover {
+          background-color: $turquoise-blue-hover;
+        }
+      }
+
+      .remove {
+        position: relative;
+
+        border: none;
+        background-color: transparent;
+        width: 16px;
+        height: 16px;
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: ' ';
+          height: 16px;
+          width: 2px;
+          top: 0;
+          left: 0;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+
+        &.white {
+
+          &:before,
+          &:after {
+            background-color: $white;
+          }
+        }
+
+        &.dark {
+
+          &:before,
+          &:after {
+            background-color: $dark;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $ice-blue;
+
+        span {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 20ch;
+        }
+
+        .select {
+          opacity: 1;
+
+        }
+      }
+
+      &.selected {
+        background-color: $ice-blue;
+
+        &.multiple {
+          background-color: $slate;
+          color: $white;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .inputContainer {
+    position: relative;
+    margin: 0 0 22px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: -12px;
+      width: calc(100% + 24px);
+      height: 1px;
+      background-color: $ice-blue;
+    }
+
+    .icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .searchInput {
+      width: 100%;
+      border-radius: 6px;
+      background-color: $ice-blue;
+      color: $blue-gray;
+      border: none;
+      padding: 15px 15px 15px 40px;
+      font-size: responsive(14, 16);
+    }
+  }
+
+  .actionButton {
+    margin-top: 20px;
+    max-width: initial;
+    text-align: center;
+    padding: 12px 25px;
+    font-size: responsive(14, 16);
+    height: auto;
+  }
+}
