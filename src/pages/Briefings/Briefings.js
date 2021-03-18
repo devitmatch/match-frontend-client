@@ -10,6 +10,7 @@ import translate from '../../libs/i18n';
 import Api from '../../libs/Api';
 
 import styles from './Briefings.module.scss';
+import criarBriefing from '../../assets/images/criarBriefing.png';
 
 function Briefings() {
   const language = useSelector((state) => state.settings.language);
@@ -199,6 +200,15 @@ function Briefings() {
           </button>
         </div>
         <div className={styles.briefingsGrid}>
+        <div
+          className={styles.newBriefingCard}
+          onClick={openBriefingForm}
+          >
+            <img src={criarBriefing} alt={translate('createBriefing', language)}/>
+            <div className={styles.info}>
+                <span className={styles.title}>{translate('createBriefing', language)}</span>
+            </div>
+        </div>
           {briefings.map((briefing) => (
             <button
               key={briefing.id}
