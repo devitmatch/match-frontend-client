@@ -138,6 +138,10 @@ function SellerCart({ close, currentOrder, orderPage }) {
     return filtered;
   }, [clientProducts]);
 
+
+  const getTotalsItems = () => {
+    return (getProductionProducts.length + getStrikeProducts.length + getHangerProducts.length + getNoClassifiedProducts.length)
+  }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getCheckedProducts = useCallback(() => {
     const checkedList = [];
@@ -776,7 +780,7 @@ function SellerCart({ close, currentOrder, orderPage }) {
         {getProductionProducts.length > 0 && (
           <>
             <div className={styles.section}>
-              {translate('production', language)}
+              No. {translate('production', language)}: {getProductionProducts.length}
             </div>
             <div className={styles.products}>
               <ul className={styles.productsList}>
@@ -914,7 +918,7 @@ function SellerCart({ close, currentOrder, orderPage }) {
         {getStrikeProducts.length > 0 && (
           <>
             <div className={styles.section}>
-              {translate('strike', language)}
+              No. {translate('strike', language)}: {getStrikeProducts.length}
             </div>
             <div className={styles.products}>
               <ul className={styles.productsList}>
@@ -1009,7 +1013,7 @@ function SellerCart({ close, currentOrder, orderPage }) {
         {getReserveProducts.length > 0 && (
           <>
             <div className={styles.section}>
-              {translate('reserve', language)}
+              No. {translate('reserve', language)}: {getStrikeProducts.length}
             </div>
             <div className={styles.products}>
               <ul className={styles.productsList}>
@@ -1041,7 +1045,7 @@ function SellerCart({ close, currentOrder, orderPage }) {
         {getHangerProducts.length > 0 && (
           <>
             <div className={styles.section}>
-              {translate('hanger', language)}
+              No. {translate('hanger', language)}: {getHangerProducts.length}
             </div>
             <div className={styles.products}>
               <ul className={styles.productsList}>
@@ -1079,10 +1083,11 @@ function SellerCart({ close, currentOrder, orderPage }) {
         )}
         {getSubtotal() > 0 && discount > 0 && (
           <div className={`${styles.sectionTotals} ${styles.subTotal}`}>
+            <span>No. Total Items: {getTotalsItems()}</span>
             <span>Subtotal: {`${getCurrencySymbol}${getSubtotal()}`}</span>
           </div>
         )}
-
+        
         {discount > 0 && (
           <div className={`${styles.sectionTotals} `}>
             <span className={styles.discount}>
@@ -1094,6 +1099,7 @@ function SellerCart({ close, currentOrder, orderPage }) {
 
         {getDiscountedSubtotal() > 0 && (
           <div className={`${styles.sectionTotals}`}>
+            <span>No. Total Items: {getTotalsItems()}</span>
             <span>
               Subtotal: {`${getCurrencySymbol}${getDiscountedSubtotal()}`}
             </span>
