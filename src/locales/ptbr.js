@@ -440,7 +440,7 @@ export const pt = {
   exclusivityDuration: 'Duração da exclusividade',
   underAnalysis: 'Em análise',
   itIsAStrike: 'É um strike mesmo?',
-  simple: 'Simple',
+  simple: 'Sample',
   writeTheCodeId: 'Escreva o código ID',
   ifExists: 'se existir',
   country: 'País',
@@ -522,7 +522,7 @@ export const pt = {
   strikeValue: 'Valor total de strike',
   productionValue: 'Valor total de produção',
   repetition: 'Repetição',
-  simpleRepetition: 'Simple e repetição',
+  simpleRepetition: 'Sample e repetição',
   finalized: 'Finalizados',
   pricePerMeter: 'Preço por metro',
   buyAgain: 'Comprar novamente',
@@ -613,6 +613,7 @@ export const pt = {
   // Briefings
   briefings: 'Briefings',
   createBriefing: 'Criar Briefing',
+  createNewCardBriefingText: 'Criar um novo briefing',
   registerBriefing: 'Cadastrar Briefing',
   writeBriefingTitle: 'Escreva aqui o nome do seu Briefing',
   writeBriefingDescription:

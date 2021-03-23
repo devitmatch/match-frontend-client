@@ -433,7 +433,7 @@ export const en = {
   exclusivityDuration: 'Exclusivity Duration',
   underAnalysis: 'Under Analysis',
   itIsAStrike: 'Is it a Strike?',
-  simple: 'Simple',
+  simple: 'Sample',
   writeTheCodeId: 'Write The ID Code',
   ifExists: 'If Exists',
   country: 'Country',
@@ -511,7 +511,7 @@ export const en = {
   strikeValue: 'Strike total value',
   productionValue: 'Production total value',
   repetition: 'Repetition',
-  simpleRepetition: 'Simple and Repetition',
+  simpleRepetition: 'Sample and Repetition',
   finalized: 'Finalizados',
   pricePerMeter: 'Price per meter',
   buyAgain: 'Buy again',
@@ -601,6 +601,7 @@ export const en = {
   // Briefings
   briefings: 'Briefings',
   createBriefing: 'Create Briefing',
+  createNewCardBriefingText: 'Create a new briefing',
   registerBriefing: 'Register Briefing',
   writeBriefingTitle: 'Write here your Briefing name',
   writeBriefingDescription:

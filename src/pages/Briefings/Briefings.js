@@ -204,9 +204,8 @@ function Briefings() {
           className={styles.newBriefingCard}
           onClick={openBriefingForm}
           >
-            <img src={criarBriefing} alt={translate('createBriefing', language)}/>
             <div className={styles.info}>
-                <span className={styles.title}>{translate('createBriefing', language)}</span>
+                <span className={styles.title}>{translate('createNewCardBriefingText', language)}</span>
             </div>
         </div>
           {briefings.map((briefing) => (

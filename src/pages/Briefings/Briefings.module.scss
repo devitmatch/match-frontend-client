@@ -85,13 +85,10 @@
     justify-content: space-between;
     padding: 0 70px;
     .newBriefingCard {
-      display: flex;
       cursor: pointer;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 24%;
-      background-color: #fff;
+      width: 25%;
+      position: relative;
+      background-color: $briefing-blue;
       margin-top: 1.5%;
       border-radius: 10px;
       overflow: hidden;
@@ -99,29 +96,21 @@
       box-shadow: none;
       transition: transform 4s cubic-bezier(0.075, 0.82, 0.165, 1);
       margin: 1.5rem;
-      img{
-        width: 15.5rem;
-        height: 15.5rem;
-        margin-top: 6.5rem;
-      }
       &:hover {
         transform: scale(1.01);
       }
       .info{
+        position: absolute;
+        display: flex;
         width: 100%;
         height: 40%;
         top: 55%;
         background-color: $white;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 15% 10px 7% 10px;
+        align-items:center;
+        justify-content: center;
         font-weight: bold;
         .title{
           font-size: 20px;
-          margin-bottom: 15%;
-          height: 24px;
         }
     }
     }
