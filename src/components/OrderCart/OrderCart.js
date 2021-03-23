@@ -708,6 +708,9 @@ function SellerCart({ close, currentOrder, orderPage }) {
       </div>
       <div className={styles.orderContent}>
         <div className={styles.draftText}>
+          <div>
+            <strong>No. Total Items: {getTotalsItems()}</strong>
+          </div>
           {selectedOrderId && clientOrders.length > 0 && (
             <div>
               Nº {selectedOrderId}-{new Date(order.date).getTime()}
@@ -745,7 +748,6 @@ function SellerCart({ close, currentOrder, orderPage }) {
             )}
           </div>
         </div>
-
         {getNoClassifiedProducts.length > 0 && (
           <div className={styles.products}>
             <ul className={styles.productsList}>

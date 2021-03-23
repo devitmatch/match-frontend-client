@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-
+import ShoppingCartIcon from '../../assets/icons/ShoppingCart';
 import translate from '../../libs/i18n';
 import Api from '../../libs/Api';
 import useOutsideClick from '../../libs/useOutsideClick';
