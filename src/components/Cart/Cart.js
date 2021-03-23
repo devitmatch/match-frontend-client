@@ -726,6 +726,10 @@ function Cart({ close }) {
     );
   }, [clientOrders, language, selectedOrder]);
 
+  const getTotalsItems = () => {
+    return (getProductionProducts.length + getHangerProducts.length + getStrikeProducts.length + getNoClassifiedProducts.length)
+  }
+
   const filteredFabrics = useMemo(() => {
     if (fabricQuery) {
       return fabricOptions.filter((f) => {
@@ -900,7 +904,6 @@ function Cart({ close }) {
           </div>
         </>
       )}
-
       {getNoClassifiedProducts.length > 0 && (
         <div className={styles.products}>
           <ul className={styles.productsList}>
@@ -948,7 +951,7 @@ function Cart({ close }) {
       {getProductionProducts.length > 0 && (
         <>
           <div className={styles.section}>
-            {translate('production', language)}
+            No. {translate('production', language)}: {getProductionProducts.length}
           </div>
           <div className={styles.products}>
             <ul className={styles.productsList}>
@@ -1043,7 +1046,7 @@ function Cart({ close }) {
       )}
       {getStrikeProducts.length > 0 && (
         <>
-          <div className={styles.section}>{translate('strike', language)}</div>
+          <div className={styles.section}>No. {translate('strike', language)}: {getStrikeProducts.length}</div>
           <div className={styles.products}>
             <ul className={styles.productsList}>
               {getStrikeProducts.map((product, index) => (
@@ -1138,7 +1141,7 @@ function Cart({ close }) {
       )}
       {getReserveProducts.length > 0 && (
         <>
-          <div className={styles.section}>{translate('reserve', language)}</div>
+          <div className={styles.section}>No. {translate('reserve', language)}: {getReserveProducts.length}</div>
           <div className={styles.products}>
             <ul className={styles.productsList}>
               {getReserveProducts.map((product, index) => (
@@ -1180,7 +1183,7 @@ function Cart({ close }) {
       )}
       {getHangerProducts.length > 0 && (
         <>
-          <div className={styles.section}>{translate('hanger', language)}</div>
+          <div className={styles.section}>No. {translate('hanger', language)}: {getHangerProducts.length}</div>
           <div className={styles.products}>
             <ul className={styles.productsList}>
               {getHangerProducts.map((product, index) => (
@@ -1243,6 +1246,7 @@ function Cart({ close }) {
                 {translate('effectuate', language)}*
               </button>
             )}
+            <strong>No. Total Items: {getTotalsItems()}</strong>
           </div>
           {!selectedOrder && (
             <div className={styles.selectPrintsWarning}>
