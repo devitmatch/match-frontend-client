@@ -262,6 +262,7 @@
   .actionsContainer {
     display: flex;
     justify-content: flex-end;
+    align-items:center;
     padding: 20px 200px;
     background-color: $white;
 
@@ -271,8 +272,8 @@
       padding: 15px 50px;
     }
 
-    span {
-      margin: 0 0.9rem;
+    strong {
+      margin-right: auto;
     }
   }
 

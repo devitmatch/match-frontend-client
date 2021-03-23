@@ -1226,6 +1226,7 @@ function Cart({ close }) {
       {clientProducts.length > 0 && (
         <>
           <div className={styles.actionsContainer}>
+          <strong>No. Total Items: {getTotalsItems()}</strong>
             {!selectedOrder ? (
               <button
                 type="button"
@@ -1246,7 +1247,7 @@ function Cart({ close }) {
                 {translate('effectuate', language)}*
               </button>
             )}
-            <strong>No. Total Items: {getTotalsItems()}</strong>
+            
           </div>
           {!selectedOrder && (
             <div className={styles.selectPrintsWarning}>
