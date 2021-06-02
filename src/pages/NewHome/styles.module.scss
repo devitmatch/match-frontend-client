@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    background-color: white;
+}
+
+.content {
+    padding-left: 1.3rem;
+    padding-top: 3.2rem;
+}
+
+.titleSection {
+    display: block;
+    max-width: 893px;
+    h1 {
+        font-weight: 800;
+        font-size: 2rem;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 3rem;
+    }
+    p {
+        font-family: 'Open Sans', sans-serif;
+        color: #847D7D;
+        font-size: 0.8rem;
+    }
+
+}
+
+.attendancesSection {
+    display: block;
+    max-width: 1163px;
+    height: 411px;
+    margin-top: 4rem;
+    .attendancesTitleSection{
+        display: flex;
+        h1 {
+            font-weight: 800;
+            font-size: 2rem;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8rem;
+        }
+
+        a {
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #000;
+            margin-left: auto;
+        }
+    }
+    .attendanceCards {
+        display: flex;
+        margin-top: 2rem;
+        div {
+            margin-right: 1rem;
+        }
+    }
+}
+
+.carousel {
+    button {
+        display:none;
+    }
+}

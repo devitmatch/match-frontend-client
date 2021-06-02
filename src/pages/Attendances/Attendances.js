@@ -29,8 +29,8 @@ function Attendances() {
 
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState(0);
-
   const [updatedPage, setUpdatedPage] = useState();
+
   const [counter, setCounter] = useState();
   const [filteredCounter] = useState();
   const [filtersModal, setFiltersModal] = useState(false);

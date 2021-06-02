@@ -1,0 +1,49 @@
+.sidebar {
+    height: 100vh;
+    width: 260px;
+    background: white;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    color: #222222;
+    li {
+        margin-bottom: 1rem;
+        font-size: 32px;
+        height: 2.5rem;
+        transition: color 0.2s;
+        list-style: none;
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding-left: 0.8rem;
+            height: 2.8rem;
+            color: inherit;
+
+            svg {
+              margin-right: 0.6rem;
+              fill: #222222;
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.04);
+                border-radius: 0.25rem;
+                color: #EC2679;
+                svg {
+                  fill: #EC2679;
+                }
+            }
+    
+            &.activeLink {
+              background: rgba(0, 0, 0, 0.04);
+              border-radius: 0.25rem;
+              font-weight: 700;
+              color: #EC2679;
+              opacity: 1;
+              svg {
+                fill: #EC2679;
+              }
+            }
+          }
+        
+    }
+}

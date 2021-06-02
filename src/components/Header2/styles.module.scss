@@ -1,0 +1,58 @@
+@import '../../libs/variables.scss';
+
+.gradient{
+    height: .6rem;
+    width: 100%;
+    background: rgb(238,31,223);
+    background: linear-gradient(90deg, rgba(238,31,223,1) 1%, rgba(255,94,0,1) 51%, rgba(245,233,43,1) 98%);
+}
+.header {
+    height: 4.5rem;
+    border-bottom: solid 0.5px lightgray;
+    padding: 1rem;
+    background-color: white;  
+}
+
+.content {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    img {
+        max-width: 100px;
+    }
+}
+
+section {
+    display: flex;
+    align-items: center;
+    .searchInputContainer {
+        height: 46px;
+        min-width: 350px;
+        border: 1px solid $light-periwinkle;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        padding: 10px 15px;
+        position: relative;
+        margin-right: 0.8rem;
+    
+        svg {
+          margin-right: 5px;
+        }
+    
+        input {
+          height: 100%;
+          width: 100%;
+          border: none;
+          background: none;
+    
+          &:placeholder {
+            color: $light-gray;
+          }
+        }
+    }
+    svg {
+        margin-right: 0.8rem;
+    }
+}

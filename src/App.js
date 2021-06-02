@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import HeaderComponent from './components/Header/Header';
+import { Header } from './components/Header2';
 
 import isLoggedIn from './libs/AuthCheck';
 
@@ -23,6 +24,9 @@ import AttendancePresentation from './pages/AttendancePresentation/AttendancePre
 import Register from './pages/Register/Register';
 import MyPrints from './pages/MyPrints/MyPrints';
 import Orders from './pages/Orders/Orders';
+import { Sidebar } from './components/Sidebar';
+import { NewHome } from './pages/NewHome';
+import { NewAttendances } from './pages/NewAttendances';
 
 function App() {
   return (
@@ -69,9 +73,13 @@ function App() {
             <HeaderComponent />
             <MyPrints />
           </Route>
-          <Route path="/">
-            <HeaderComponent />
-            <Home />
+          <Route exact path="/">
+            <Header />
+            <NewHome />
+          </Route>
+          <Route path="/attendance">
+            <Header />
+            <NewAttendances />
           </Route>
         </Switch>
       </Router>
